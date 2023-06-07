@@ -18,14 +18,14 @@ const Signup = () => {
       }, [navigate]);
 
     const onSignup = () => {
-        setloading(true);
+        setloading(true);navigate('/');
         const auth = getAuth();
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 updateProfile(userCredential.user, { displayName: name })
                     .then(() => {
-                        navigate('/'); // Use navigate function to navigate to the desired route
+                         // Use navigate function to navigate to the desired route
                     })
                     .catch((e) => alert(e.message))
                     .finally(() => setloading(false));

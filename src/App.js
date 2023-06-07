@@ -1,25 +1,23 @@
 import { Routes, Route } from 'react-router-dom';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 import React from 'react';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import { useState, useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { initilizeFirebase } from './utils/Firebase';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBIMKmwsLcZKuEfRS3yLJ5C2C50mtkrx1s",
-  authDomain: "todo2-b46cf.firebaseapp.com",
-  projectId: "todo2-b46cf",
-  storageBucket: "todo2-b46cf.appspot.com",
-  messagingSenderId: "442889986596",
-  appId: "1:442889986596:web:6a8b2f6ad566825834aeb1",
-  measurementId: "G-R2ZCY55XBW"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+initilizeFirebase();
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, user => {
+      setUser(user)
+    })
+  }, [])
   return (
     <div className="App">
 
