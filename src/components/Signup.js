@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -9,6 +9,13 @@ const Signup = () => {
     const [loading, setloading] = useState(false);
 
     const navigate = useNavigate(); // Get the navigate function from React Router
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+      
+        if (token) {
+          navigate('/dashboard');
+        }
+      }, [navigate]);
 
     const onSignup = () => {
         setloading(true);
