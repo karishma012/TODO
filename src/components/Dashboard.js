@@ -13,6 +13,30 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 
+const TaskCard = ({ task, onEdit, onDelete }) => {
+  return (
+    <div className="bg-gray-100 p-5 rounded shadow-md">
+      <p className="font-bold">{task.title}</p>
+      <p>{task.description}</p>
+      <p>{new Date(task.createdAt).toLocaleString()}</p>
+      <div className="flex justify-end mt-3">
+        <button
+          onClick={() => onEdit(task)}
+          className="bg-blue-500 to-yellow-200 text-white px-2 py-1 rounded text-xs font-bold mr-2"
+        >
+          Edit
+        </button>
+        <button
+          onClick={() => onDelete(task.uid)}
+          className="bg-red-500 to-yellow-200 text-white px-2 py-1 rounded text-xs font-bold"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  );
+};
+
 const Dashboard = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -124,9 +148,9 @@ const Dashboard = () => {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-    <div className="w-96 bg-white shadow-lg xl:w-120">
+      <div className="w-full max-w-4xl bg-white shadow-lg">
         <div className="m-5 font-bold text-pink-600 underline text-pink-600">
-          <p>Welcome,  {user && user.displayName}!</p>
+          <p>Welcome, {user && user.displayName}!</p>
         </div>
         <div className="m-5">
           <label className="block text-xl font-bold mb-2">Title</label>
@@ -171,29 +195,13 @@ const Dashboard = () => {
             </button>
           )}
         </div>
-        {tasks.map((task) => (
-          <div className="m-5 flex justify-between" key={task.uid}>
-            <div>
-              <p className="font-bold">{task.title}</p>
-              <p>{task.description}</p>
-              <p>{new Date(task.createdAt).toLocaleString()}</p>
+        <div className="max-h-60 overflow-y-auto">
+          {tasks.map((task) => (
+            <div className="m-5" key={task.uid}>
+              <TaskCard task={task} onEdit={editTask} onDelete={deleteTask} />
             </div>
-            <div>
-              <button
-                onClick={() => editTask(task)}
-                className="bg-blue-500 to-yellow-200 text-white px-2 py-1 rounded text-xs font-bold mr-2"
-              >
-                Edit
-              </button>
-              <button
-                onClick={() => deleteTask(task.uid)}
-                className="bg-red-500 to-yellow-200 text-white px-2 py-1 rounded text-xs font-bold"
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="m-5">
           <button
             onClick={logout}
