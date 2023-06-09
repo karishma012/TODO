@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { initilizeFirebase } from './utils/Firebase';
 import HomePage from './components/HomePage';
+import ResetPassword from './components/ResetPassword';
 
 const mystyle = {
   width: '100%',
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={< HomePage />} />
           <Route path="/login" element={< Login />} />
+          <Route path="/ResetPassword" element={< ResetPassword/>} />
 
           <Route path="/signup" element={< Signup />} />
           <Route path="/dashboard" element={< Dashboard />} />

@@ -39,7 +39,7 @@ export const HomePage = () => {
               <div className="flex items-center">
                 <a
                   href="/"
-                  className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+                  className="text-gray-600 transition-colors duration-300 "
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
                     <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z" />
@@ -84,7 +84,7 @@ export const HomePage = () => {
       <div className="inset-y-0 top-0 right-9 w-full max-w-xl px-9 mx-auto mb-6 md:px-0 py-8 lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
   <img
     className="object-cover w-full h-3/4 rounded shadow-lg lg:rounded-none lg:shadow-none md:w-full md:h-1/2 lg:h-3/4"
-    src="https://media.istockphoto.com/id/1346727107/photo/beautiful-smiling-overweight-woman-sitting-on-the-floor-surrounded-by-packed-boxes-and-making.jpg?s=2048x2048&w=is&k=20&c=jGBVrj5BdLtqfDZC1CSvjRUM20Fl6Aix-euYMsCdcMQ="
+    src="https://img.freepik.com/free-photo/hands-unrecognizable-man-sitting-table-with-laptop-drawing-diagram-notebook_1098-20178.jpg?w=1060&t=st=1686311456~exp=1686312056~hmac=2f6a073d8bcbbd63e1ca5fccf249c88e39b9ab9cb91947b6e5b960670bd7054f"
     alt=""
   />
 </div>
