@@ -12,7 +12,7 @@ import ResetPassword from './components/ResetPassword';
 
 const mystyle = {
   width: '100%',
-  height: '100vh',
+  height: '200vh',
   backgroundImage: `url(${image})`,
 
 }
